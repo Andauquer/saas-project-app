@@ -13,6 +13,10 @@ gem 'sendgrid-ruby'
 gem 'devise'
 # Use Milia fot multi tenancy
 gem 'milia'
+# Use Bootstrap for styling
+gem 'twitter-bootstrap-rails'
+# Use Devise-Bootstrap for styling
+gem 'devise-bootstrap-views'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
