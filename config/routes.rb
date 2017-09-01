@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :artifacts
   # Con esta sintaxis nos aseguramos que la ruta de projects este bajo tenants, exp: tenants/projects
   resources :tenants do
     resources :projects

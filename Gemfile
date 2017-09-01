@@ -21,6 +21,8 @@ gem 'devise-bootstrap-views'
 gem 'bootstrap-datepicker-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+# Use aws-sdk for working with AWS
+gem 'aws-sdk'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
