@@ -17,6 +17,8 @@ gem 'milia'
 gem 'twitter-bootstrap-rails'
 # Use Devise-Bootstrap for styling
 gem 'devise-bootstrap-views'
+# Use datepicker for pick dates"
+gem 'bootstrap-datepicker-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

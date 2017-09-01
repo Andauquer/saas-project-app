@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  # Con esta sintaxis nos aseguramos que la ruta de projects este bajo tenants, exp: tenants/projects
+  resources :tenants do
+    resources :projects
+  end
   resources :members
   get 'home/index'
 

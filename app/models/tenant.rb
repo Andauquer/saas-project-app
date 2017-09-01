@@ -1,7 +1,15 @@
 class Tenant < ActiveRecord::Base
 
-   acts_as_universal_and_determines_tenant
+  acts_as_universal_and_determines_tenant
+  # Dependant significa que si un objeto de esta clase es destruida, sus hijos tambien lo seran. En este
+  # caso, members y projects.
   has_many :members, dependent: :destroy
+  has_many :projects, dependent: :destroy
+  
+  def can_create_projects?
+    (plan == 'free' && projects.count < 1) || (plan == 'premium')  
+  end  
+  
   validates_uniqueness_of :name
   validates_presence_of :name
 
