@@ -7,7 +7,7 @@ class ConfirmationsController < Milia::ConfirmationsController
 
       if resource.errors.empty?
         log_action( "invitee confirmed" )
-        set_flash_message(:notice, :confirmed)
+        set_flash_message(:notice, :confirmed) if is_flashing_format?
           # Sign in automatically
         sign_in_tenanted_and_redirect(resource)
       else

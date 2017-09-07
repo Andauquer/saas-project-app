@@ -29,7 +29,7 @@ Rails.application.configure do
   config.eager_load = false
   
   # Escribimos esta linea para que nuestro entorno de desarollo no envie correos verdaderos
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'https://completerubyonrailscourse-andauquer.c9users.io' }
 
   # Show full error reports and disable caching.
