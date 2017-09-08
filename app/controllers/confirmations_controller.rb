@@ -7,7 +7,7 @@ class ConfirmationsController < Milia::ConfirmationsController
 
       if resource.errors.empty?
         log_action( "invitee confirmed" )
-        set_flash_message(:notice, :confirmed)
+        set_flash_message(:notice, :confirmed) if is_flashing_format?
           # Sign in automatically
         sign_in_tenanted_and_redirect(resource)
       else
@@ -42,7 +42,7 @@ class ConfirmationsController < Milia::ConfirmationsController
     # Else fall thru to show template which is form to set a password
     # Upon SUBMIT, processing will continue from update
   end
-
+  
   def after_confirmation_path_for(resource_name, resource)
     if user_signed_in?
       root_path
@@ -50,12 +50,11 @@ class ConfirmationsController < Milia::ConfirmationsController
       new_user_session_path
     end
   end
-
+  
   private
-    
+  
   def set_confirmable()
     @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
   end
-  
-end
 
+end
